@@ -1,4 +1,6 @@
 # Compiled Lua sources
+lazy-lock.json
+
 luac.out
 
 # luarocks build files
