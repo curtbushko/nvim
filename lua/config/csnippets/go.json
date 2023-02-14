@@ -1,0 +1,152 @@
+{
+  "if err [curt snippet]": {
+    "prefix": "iferr",
+    "body": "if err != nil {\n\treturn nil, err\n}",
+    "description": "if err != nil statement"
+  },
+  "todo [curt snippet]": {
+    "prefix": "todo",
+    "body": "\/\/ TODO: $1",
+    "description": "add a todo item"
+  },
+  "t.Errorf(want,got) statement [curt snippet]": {
+    "prefix": "terr",
+    "body": "t.Errorf(\"wanted %v, got %v\", tc.want, got)",
+    "description": "simple t.Errorf want/got statement"
+  },
+  "if c.want != got [curt snippet]": {
+    "prefix": "tdtwant",
+    "body": "if c.want != got {\n\tt.Errorf(\"wanted %v, got %v\", c.want, go)\n}",
+    "description": "simple if c.want != got and t.Errorf want/got statement"
+  },
+  "if want != got [curt snippet]": {
+    "prefix": "twant",
+    "body": "if want != got {\n\tt.Errorf(\"wanted %v, got %v\", want, got)\n}",
+    "description": "simple if want != got and t.Errorf want/got statement"
+  },
+  "t.Run(....), func(t *testing.T) [curt snippet]": {
+    "prefix": "trun",
+    "body": "t.Run(\"$1\", func(t *testing.T) {\n\t$2\n})",
+    "description": "embedded test run in a test case"
+  },
+  "extended table driven test [curt snippet]": {
+    "prefix": "tdd",
+    "body": "func Test$1(t *testing.T) {\n\tcases := []struct {\n\t\tname string\n\t\tactual\t string\n\t\texpected string\n\t\t$4\n\t}{\n\t\t{\n\t\t\tname: \"\",\n\t\t\tactual: \"\",\n\t\t\texpected: \"\",\n\t\t\n\t\t},\n\t}\n\tfor _, c := range cases {\n\t\tt.Run(c.name, func(t *testing.T) {\n\t\t\tgot := <function>(c.actual)\n\t\t\tif c.expected != got {\n\t\t\t\tt.Errorf(\"expected %v, got %v\", c.expected, got)\n\t\t\t}\n\t\t})\n\t}\n}",
+    "description": "snippet for table driven test"
+  },
+  "single linked list [curt snippet]": {
+    "prefix": "ll",
+    "body": "type element struct {\n\tname string\n\tnext *element\n}\n\ntype list struct {\n\tname string\n\thead *element\n}",
+    "description": "single linked list"
+  },
+  "doubly linked list [curt snippet]": {
+    "prefix": "lld",
+    "body": "type element struct {\n\tname string\n\tnext *element\n\tprevious *element\n}\n\ntype list struct {\n\tname string\n\thead *element\n\ttail *element\n}",
+    "description": "double linked list"
+  },
+  "slice append vector [sliceTricks]": {
+    "prefix": "slav",
+    "body": "a = append(a, b...)",
+    "description": "slice append vector"
+  },
+  "slice copy [sliceTricks]": {
+    "prefix": "slcopy",
+    "body": "b := make([]T, len(a))\ncopy(b, a)",
+    "description": "slice copy"
+  },
+  "slice cut [sliceTricks]": {
+    "prefix": "slcut",
+    "body": "a = append(a[:i], a[j:]...)",
+    "description": "slice cut"
+  },
+  "slice delete [sliceTricks]": {
+    "prefix": "sldel",
+    "body": "a = append(a[:i], a[i+1:]...)\n\/\/ or\na = a[:i+copy(a[i:], a[i+1:])]",
+    "description": "slice delete"
+  },
+  "slice expand [sliceTricks]": {
+    "prefix": "slexpand",
+    "body": "a = append(a[:i], append(make([]T, j), a[i:]...)...)",
+    "description": "slice expand"
+  },
+  "slice extend [sliceTricks]": {
+    "prefix": "slextend",
+    "body": "a = append(a, make([]T, j)...)",
+    "description": "slice extend"
+  },
+  "slice push [sliceTricks]": {
+    "prefix": "slpush",
+    "body": "a = append(a, x)",
+    "description": "slice push"
+  },
+  "slice pop [sliceTricks]": {
+    "prefix": "slpop",
+    "body": "x, a = a[len(a)-1], a[:len(a)-1]",
+    "description": "slice pop"
+  },
+  "slice push front/unshift [sliceTricks]": {
+    "prefix": "slpushf",
+    "body": "a = append([]T{x}, a...)",
+    "description": "slice push front/unshift"
+  },
+  "slice pop front/unshift [sliceTricks]": {
+    "prefix": "slpopf",
+    "body": "x, a = a[0], a[1:]",
+    "description": "slice pop front/unshift"
+  },
+  "slice filter using underlying array [sliceTricks]": {
+    "prefix": "slfilter",
+    "body": "b := a[:0]\nfor _, x := range a {\n\tif f(x) {\n\t\tb = append(b, x)\n\t}\n}\n\/\/ Force garbage collection\nfor i := len(b); i < len(a); i++ {\n\ta[i] = nil \/\/ or the zero value of T\n}",
+    "description": "slice filter using underlying array"
+  },
+  "slice reversal using indexes [sliceTricks]": {
+    "prefix": "slrev",
+    "body": "for left, right := 0, len(a)-1; left < right; left, right = left+1, right-1 {\na[left], a[right] = a[right], a[left]\n}",
+    "description": "slice reversal using indexes"
+  },
+  "slice shuffle using Fisher–Yates algorithm [sliceTricks]": {
+    "prefix": "slshuffle",
+    "body": "for i := len(a) - 1; i > 0; i-- {\n\tj := rand.Intn(i + 1)\n\ta[i], a[j] = a[j], a[i]\n}",
+    "description": "slice shuffle using Fisher–Yates algorithm"
+  },
+  "slice batching with minimal allocation [sliceTricks]": {
+    "prefix": "slbatch",
+    "body": "\/\/Yields: [[0 1 2] [3 4 5] [6 7 8] [9]]\nactions := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}\nbatchSize := 3\nbatches := make([][]int, 0, (len(actions) + batchSize - 1) / batchSize)\n\nfor batchSize < len(actions) {\n\tactions, batches = actions[batchSize:], app(batches, actions[0:batchSize:batchSize])\n}\nbatches = append(batches, actions)\n\n",
+    "description": "Slice batching with minimal allocation. Useful if you want to do batch processing on large slices."
+  },
+  "slice dedupe in place [sliceTricks]": {
+    "prefix": "sldedupe",
+    "body": "in := []int{3,2,1,4,3,2,1,4,1} \/\/ any item can be sorted\nsort.Ints(in)\nj := 0\nfor i := 1; i < len(in); i++ {\n\tif in[j] == in[i] {\n\t\tcontinue\n\t}\n\tj++\n\t\/\/ preserve the original data\n\t\/\/ in[i], in[j] = in[j], in[i]\n\t\/\/ only set what is required\n\tin[j] = in[i]\n}\nresult := in[:j+1]\nfmt.Println(result) \/\/ [1 2 3 4]",
+    "description": "Slice dedupe in place"
+  },
+  "slice sliding window [sliceTricks]": {
+    "prefix": "slsliding",
+    "body": "func slidingWindow(size int, input []int) [][]int {\n\/\/ returns the input slice as the first element\nif len(input) <= size {\n\treturn [][]int{input}\n}\n\n\/\/ allocate slice at the precise size we need\nr := make([][]int, 0, len(input)-size+1)\n\nfor i, j := 0, size; j <= len(input); i, j = i+1, j+1 {\n\tr = append(r, input[i:j])\n}\n\n\treturn r\n}\n",
+    "description": "Slice sliding window"
+  },
+  "for i := 0 loop [curt snippet]": {
+    "prefix": "fori",
+    "body": "for i := 0; i < len($1); i++ { \n\t\n}\n",
+    "description": "simple for loop with initializing i"
+  },
+  "simple go func [curt snippet]": {
+    "prefix": "gofu",
+    "body": "go func() {\n\t$1\n}()\n",
+    "description": "simple anonymized go func"
+  },
+  "hash algorithm [curt snippet]": {
+    "prefix": "hashalgo",
+    "body": "\/\/ Don't forget to: import \"github.com/OneOfOne/xxhash\"\nfunc hashAlgorithm(key []byte) uint64 {\n\th := xxhash.New64()\n\th.Write(key)\n\treturn h.Sum64()\n}\n",
+    "description": "A fast hash algorithm using xxhash"
+  },
+  "breadth-first search [curt snippet]": {
+    "prefix": "bfs",
+    "body": "type Node struct {\n\tValue    int\n\tChildren []*Node\n}\n\nfunc (n *Node) BreadthFirstSearch(array []int) []int {\n\tqueue := []*Node{n}\n\tfor len(queue) > 0 {\n\t\tcurrent := queue[0]\n\t\tqueue := queue[1:]\n\t\tarray = append(array, current.Value)\n\t\tfor _, child := range n.Children {\n\t\t\tqueue := append(queue, child)\n\t\t}\n\t}\n}\n",
+    "description": "An example of a breadth-first search"
+  },
+  "depth-first search [curt snippet]": {
+    "prefix": "dfs",
+    "body": "type Node struct {\n\tValue    int\n\tChildren []*Node\n}\n\nfunc (n *Node) DepthFirstSearch(array []int) []int {\n\tarray = append(array, n.Value)\n\tfor _, child := range n.Children {\n\t\tarray = child.DepthFirstSearch(array)\n\t}\n}\n",
+    "description": "An example of a depth-first search"
+  }
+}

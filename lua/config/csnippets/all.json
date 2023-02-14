@@ -1,0 +1,7 @@
+{
+  "today's date in @{YY-MM-DD} [curt snippet]": {
+    "prefix": "@today",
+    "body": "@{${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}}",
+    "description": "today's date in @{YY-MM-DD} format"
+  }
+}
