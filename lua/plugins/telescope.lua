@@ -96,6 +96,22 @@ return {
         end,
         desc = " Grep all files (hidden)",
       },
+      -- git keymaps
+      {
+        "<leader>Gc",
+        ":Telescope git_commits<CR>",
+        desc = "ﰖ Commits",
+      },
+      {
+        "<leader>Gb",
+        ":Telescope git_branches<CR>",
+        desc = " Branches",
+      },
+      {
+        "<leader>Gs",
+        ":Telescope git_status<CR>",
+        desc = "ﮮ Status",
+      },
     },
     -- change some options
     opts = {
@@ -108,7 +124,6 @@ return {
     },
   },
 
-  -- TODO: Stuff
   -- add telescope-fzf-native
   {
     "telescope.nvim",
