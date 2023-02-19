@@ -5,9 +5,6 @@ return {
       defaults = {
         keymaps = false,
       },
-      checker = {
-        enabled = false,
-      },
     },
   },
 }
