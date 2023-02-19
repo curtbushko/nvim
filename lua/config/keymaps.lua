@@ -81,6 +81,8 @@ map("n", "<F7>", ":lua require('dap').terminate()<CR>", { remap = true, silent =
 map("n", "<F8>", ":GoDebug -R<CR>", { remap = true, silent = true }) -- restart
 map("n", "<leader>db", ":lua require('dap').toggle_breakpoint()<CR>", { remap = true, silent = true })
 
+map("n", "<leader>p", ":Telescope yank_history<CR>", { desc = " Paste History" })
+
 -- UI
 map("n", "<leader>uf", require("lazyvim.plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
 map("n", "<leader>us", function()

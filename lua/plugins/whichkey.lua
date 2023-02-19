@@ -34,6 +34,8 @@ return {
         ["<leader>G"] = { name = " Git" },
         ["<leader>Gd"] = { name = " DiffView" },
         ["<leader>Gh"] = { name = " Hunks" },
+
+        ["<leader>o"] = { name = " Obsidian" },
         ["<leader>S"] = { name = " Sessions" },
         ["<leader>u"] = { name = " Ui" },
         ["<leader>un"] = { name = " Noice" },
