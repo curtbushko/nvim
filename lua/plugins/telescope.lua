@@ -134,7 +134,6 @@ return {
         require("telescope").load_extension("fzf")
         require("telescope").load_extension("yank_history")
         require("telescope").load_extension("todo-comments")
-        require("telescope").load_extension("cheat")
       end,
     },
   },
