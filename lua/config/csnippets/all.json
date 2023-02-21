@@ -1,7 +1,17 @@
 {
-  "today's date in @{YY-MM-DD} [curt snippet]": {
+  "today's date in @{YY-MM-DD} [all snippet]": {
     "prefix": "@today",
     "body": "@{${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}}",
     "description": "today's date in @{YY-MM-DD} format"
+  },
+  "obsidian note header [all snippet]": {
+    "prefix": "obsidian",
+    "body": "---\nTitle: $1\nDate: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}\n---\n#untagged",
+    "description": "obsidian note header"
+  },
+  "todo [all snippet]": {
+    "prefix": "todo",
+    "body": "\/\/ TODO: $1",
+    "description": "add a todo item"
   }
 }

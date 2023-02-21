@@ -4,9 +4,14 @@ return {
     config = function()
       require("obsidian").setup({
         dir = "~/Sync/KB",
+        id = {},
         daily_notes = {
           folder = "daily",
         },
+        disable_frontmatter = true,
+        note_id_func = function()
+          return tostring(os.date("%Y%m%d-%H%M"))
+        end,
       })
     end,
     -- :ObsidianBacklinks for getting a location list of references to the current buffer.
@@ -23,9 +28,17 @@ return {
     keys = {
       { "<leader>ob", "<CMD>ObsidianBacklinks<CR>", desc = " Backlinks" },
       { "<leader>od", "<CMD>ObsidianToday<CR>", desc = " New Daily Note" },
-      { "<leader>of", "<CMD>ObsidianFollowLink<CR>", desc = " Follow Link" },
+      {
+        "<leader>Sr",
+        function()
+          require("persistence").load()
+        end,
+        desc = "Restore Session",
+      },
+      { "<leader>of", "gf", desc = " Follow Link" },
       { "<leader>ol", "<CMD>ObsidianLink<CR>", desc = " Link" },
-      { "<leader>on", "<CMD>ObsidianLinkNew<CR>", desc = " New Note from Link" },
+      { "<leader>om", "<CMD>ObsidianLinkNew<CR>", desc = " New Note from Link" },
+      { "<leader>on", "<CMD>ObsidianNew<CR>", desc = " New Note" },
       { "<leader>oy", "<CMD>ObsidianYesterday<CR>", desc = " Yesterdays Daily Note" },
     },
   },

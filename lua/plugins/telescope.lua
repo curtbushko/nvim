@@ -9,7 +9,7 @@ return {
         function()
           require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
         end,
-        desc = "Find Plugin File",
+        desc = " Find Plugin File",
       },
 
       {
@@ -134,6 +134,7 @@ return {
         require("telescope").load_extension("fzf")
         require("telescope").load_extension("yank_history")
         require("telescope").load_extension("todo-comments")
+        require("telescope").load_extension("cheat")
       end,
     },
   },

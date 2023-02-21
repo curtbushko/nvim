@@ -6,8 +6,8 @@ return {
       style = "night",
       on_colors = function(c)
         c.yellow = "#FFEC6E"
-        c.green1 = "#65bcff"
-        c.green2 = "#65bcff"
+        c.green1 = "#00b0fc"
+        c.green2 = "#019ef3"
         c.teal = "#65bcff"
         c.blue2 = "#7aa2f7"
       end,

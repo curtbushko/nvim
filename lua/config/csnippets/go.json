@@ -1,45 +1,40 @@
 {
-  "if err [curt snippet]": {
+  "if err [go snippet]": {
     "prefix": "iferr",
     "body": "if err != nil {\n\treturn nil, err\n}",
     "description": "if err != nil statement"
   },
-  "todo [curt snippet]": {
-    "prefix": "todo",
-    "body": "\/\/ TODO: $1",
-    "description": "add a todo item"
-  },
-  "t.Errorf(want,got) statement [curt snippet]": {
+  "t.Errorf(want,got) statement [go snippet]": {
     "prefix": "terr",
     "body": "t.Errorf(\"wanted %v, got %v\", tc.want, got)",
     "description": "simple t.Errorf want/got statement"
   },
-  "if c.want != got [curt snippet]": {
+  "if c.want != got [go snippet]": {
     "prefix": "tdtwant",
     "body": "if c.want != got {\n\tt.Errorf(\"wanted %v, got %v\", c.want, go)\n}",
     "description": "simple if c.want != got and t.Errorf want/got statement"
   },
-  "if want != got [curt snippet]": {
+  "if want != got [go snippet]": {
     "prefix": "twant",
     "body": "if want != got {\n\tt.Errorf(\"wanted %v, got %v\", want, got)\n}",
     "description": "simple if want != got and t.Errorf want/got statement"
   },
-  "t.Run(....), func(t *testing.T) [curt snippet]": {
+  "t.Run(....), func(t *testing.T) [go snippet]": {
     "prefix": "trun",
     "body": "t.Run(\"$1\", func(t *testing.T) {\n\t$2\n})",
     "description": "embedded test run in a test case"
   },
-  "extended table driven test [curt snippet]": {
+  "extended table driven test [go snippet]": {
     "prefix": "tdd",
     "body": "func Test$1(t *testing.T) {\n\tcases := []struct {\n\t\tname string\n\t\tactual\t string\n\t\texpected string\n\t\t$4\n\t}{\n\t\t{\n\t\t\tname: \"\",\n\t\t\tactual: \"\",\n\t\t\texpected: \"\",\n\t\t\n\t\t},\n\t}\n\tfor _, c := range cases {\n\t\tt.Run(c.name, func(t *testing.T) {\n\t\t\tgot := <function>(c.actual)\n\t\t\tif c.expected != got {\n\t\t\t\tt.Errorf(\"expected %v, got %v\", c.expected, got)\n\t\t\t}\n\t\t})\n\t}\n}",
     "description": "snippet for table driven test"
   },
-  "single linked list [curt snippet]": {
+  "single linked list [go snippet]": {
     "prefix": "ll",
     "body": "type element struct {\n\tname string\n\tnext *element\n}\n\ntype list struct {\n\tname string\n\thead *element\n}",
     "description": "single linked list"
   },
-  "doubly linked list [curt snippet]": {
+  "doubly linked list [go snippet]": {
     "prefix": "lld",
     "body": "type element struct {\n\tname string\n\tnext *element\n\tprevious *element\n}\n\ntype list struct {\n\tname string\n\thead *element\n\ttail *element\n}",
     "description": "double linked list"
@@ -124,27 +119,27 @@
     "body": "func slidingWindow(size int, input []int) [][]int {\n\/\/ returns the input slice as the first element\nif len(input) <= size {\n\treturn [][]int{input}\n}\n\n\/\/ allocate slice at the precise size we need\nr := make([][]int, 0, len(input)-size+1)\n\nfor i, j := 0, size; j <= len(input); i, j = i+1, j+1 {\n\tr = append(r, input[i:j])\n}\n\n\treturn r\n}\n",
     "description": "Slice sliding window"
   },
-  "for i := 0 loop [curt snippet]": {
+  "for i := 0 loop [go snippet]": {
     "prefix": "fori",
     "body": "for i := 0; i < len($1); i++ { \n\t\n}\n",
     "description": "simple for loop with initializing i"
   },
-  "simple go func [curt snippet]": {
+  "simple go func [go snippet]": {
     "prefix": "gofu",
     "body": "go func() {\n\t$1\n}()\n",
     "description": "simple anonymized go func"
   },
-  "hash algorithm [curt snippet]": {
+  "hash algorithm [go snippet]": {
     "prefix": "hashalgo",
     "body": "\/\/ Don't forget to: import \"github.com/OneOfOne/xxhash\"\nfunc hashAlgorithm(key []byte) uint64 {\n\th := xxhash.New64()\n\th.Write(key)\n\treturn h.Sum64()\n}\n",
     "description": "A fast hash algorithm using xxhash"
   },
-  "breadth-first search [curt snippet]": {
+  "breadth-first search [go snippet]": {
     "prefix": "bfs",
     "body": "type Node struct {\n\tValue    int\n\tChildren []*Node\n}\n\nfunc (n *Node) BreadthFirstSearch(array []int) []int {\n\tqueue := []*Node{n}\n\tfor len(queue) > 0 {\n\t\tcurrent := queue[0]\n\t\tqueue := queue[1:]\n\t\tarray = append(array, current.Value)\n\t\tfor _, child := range n.Children {\n\t\t\tqueue := append(queue, child)\n\t\t}\n\t}\n}\n",
     "description": "An example of a breadth-first search"
   },
-  "depth-first search [curt snippet]": {
+  "depth-first search [go snippet]": {
     "prefix": "dfs",
     "body": "type Node struct {\n\tValue    int\n\tChildren []*Node\n}\n\nfunc (n *Node) DepthFirstSearch(array []int) []int {\n\tarray = append(array, n.Value)\n\tfor _, child := range n.Children {\n\t\tarray = child.DepthFirstSearch(array)\n\t}\n}\n",
     "description": "An example of a depth-first search"
