@@ -11,7 +11,10 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
--- Nice to haves
+--- Maps for jj to act as Esc in insert and command modes
+map("i", "jj", "<ESC>", { remap = true, silent = true })
+map("c", "jj", "<ESC>", { remap = true, silent = true })
+--- Nice to haves
 map("n", "<TAB>", "<CMD>BufferLineCycleNext<cr>", { remap = true, desc = "Next buffer tab" })
 map("n", "<S-TAB>", "<CMD>BufferLineCyclePrev<cr>", { remap = true, desc = "Previous buffer tab" })
 map("n", "<leader>j", "<C-f>", { remap = true, silent = true, desc = " Screen down" })

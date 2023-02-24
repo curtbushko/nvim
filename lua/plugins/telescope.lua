@@ -11,7 +11,6 @@ return {
         end,
         desc = " Find Plugin File",
       },
-
       {
         "<leader>fb",
         function()
@@ -26,6 +25,12 @@ return {
         end,
         desc = " Find text under cursor",
       },
+      {
+        "<leader>fe",
+        ":Telescope file_browser<CR>",
+        desc = " Explorer (root dir)",
+      },
+
       {
         "<leader>ff",
         function()
@@ -120,6 +125,27 @@ return {
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
         winblend = 0,
+        mappings = {
+          i = {
+            ["<C-n"] = function(...)
+              return require("telescope.actions").cycle_history_next(...)
+            end,
+            ["<C-p>"] = function(...)
+              return require("telescope.actions").cycle_history_prev(...)
+            end,
+            ["<C-j>"] = function(...)
+              return require("telescope.actions").move_selection_next(...)
+            end,
+            ["<C-k>"] = function(...)
+              return require("telescope.actions").move_selection_previous(...)
+            end,
+          },
+          n = {
+            ["q"] = function(...)
+              return require("telescope.actions").close(...)
+            end,
+          },
+        },
       },
     },
   },
@@ -134,7 +160,12 @@ return {
         require("telescope").load_extension("fzf")
         require("telescope").load_extension("yank_history")
         require("telescope").load_extension("todo-comments")
+        require("telescope").load_extension("file_browser")
       end,
     },
+  },
+
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
   },
 }
