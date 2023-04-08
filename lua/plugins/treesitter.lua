@@ -25,6 +25,9 @@ return {
           end
         end,
       },
+      {
+        "nvim-treesitter/nvim-treesitter-context",
+      },
     },
     keys = {
       { "<c-space>", desc = "Increment selection" },
