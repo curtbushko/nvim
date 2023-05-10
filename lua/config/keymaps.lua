@@ -15,8 +15,8 @@ end
 map("i", "jj", "<ESC>", { remap = true, silent = true })
 map("c", "jj", "<ESC>", { remap = true, silent = true })
 --- Nice to haves
-map("n", "<TAB>", "<CMD>BufferLineCycleNext<cr>", { remap = true, desc = "Next buffer tab" })
-map("n", "<S-TAB>", "<CMD>BufferLineCyclePrev<cr>", { remap = true, desc = "Previous buffer tab" })
+map("n", "<TAB>", "<CMD>BufferLineCycleNext<cr>", { remap = true, desc = " Next Buffer" })
+map("n", "<S-TAB>", "<CMD>BufferLineCyclePrev<cr>", { remap = true, desc = " Previous Buffer" })
 map("n", "<leader>j", "<C-f>", { remap = true, silent = true, desc = " Screen down" })
 map("n", "<leader>k", "<C-b>", { remap = true, silent = true, desc = " Screen up" })
 map(

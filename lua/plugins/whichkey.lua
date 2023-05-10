@@ -35,6 +35,7 @@ return {
         ["<leader>Gd"] = { name = " DiffView" },
         ["<leader>Gh"] = { name = " Hunks" },
 
+        ["<leader>m"] = { name = " Marks" },
         ["<leader>o"] = { name = " Obsidian" },
         ["<leader>S"] = { name = " Sessions" },
         ["<leader>u"] = { name = " Ui" },
