@@ -86,6 +86,13 @@ return {
         desc = " Grep",
       },
       {
+        "<leader>fs",
+        function()
+          require("telescope.builtin").lsp_document_symbols()
+        end,
+        desc = " Symbols",
+      },
+      {
         "<leader>ft",
         ":TodoTelescope<CR>",
         desc = " Todo",
