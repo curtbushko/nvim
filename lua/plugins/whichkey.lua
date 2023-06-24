@@ -17,8 +17,6 @@ return {
         mode = { "n", "v" },
         ["<leader>b"] = { name = "﬘ Buffers" },
         -- Code menus
-        ["<leader>c"] = { name = " Code LSP" },
-        ["<leader>cg"] = { name = "-> Goto" },
         ["<leader>d"] = { name = "ﮊ Debug" },
         ["<leader>f"] = { name = " Find" },
         -- Golang menus
@@ -35,9 +33,11 @@ return {
         ["<leader>Gd"] = { name = " DiffView" },
         ["<leader>Gh"] = { name = " Hunks" },
 
+        ["<leader>l"] = { name = " LSP" },
         ["<leader>m"] = { name = " Marks" },
         ["<leader>o"] = { name = " Obsidian" },
         ["<leader>S"] = { name = " Sessions" },
+        ["<leader>t"] = { name = " Trouble" },
         ["<leader>u"] = { name = " Ui" },
         ["<leader>un"] = { name = " Noice" },
       })

@@ -51,17 +51,17 @@ map("n", "<leader>cgd", "<CMD>Telescope lsp_definitions<CR>", { desc = "ﰍ Defi
 map("n", "<leader>cgi", "<CMD>Telescope lsp_implementations<CR>", { desc = "  Implementations" })
 map("n", "<leader>cgr", "<CMD>Telescope lsp_references<CR>", { desc = " References" })
 
-map("n", "<leader>ca", "<CMD>lua vim.lsp.buf.code_action()<CR>", { desc = " Code Action" })
-map("n", "<leader>cD", "<CMD>Telescope diagnostics<CR>", { desc = " Diagnostics" })
-map("n", "<leader>cd", "<CMD>Telescope lsp_type_definitions<CR>", { desc = " Type Definitions" })
-map("n", "<leader>cf", "<CMD>lua vim.lsp.buf.formatting()<CR>", { desc = " Format" })
-map("n", "<leader>ch", "<CMD>lua vim.lsp.buf.signature_help()<CR>", { desc = "ﰠ Signature Help" })
-map("n", "<leader>cK", "<CMD>lua vim.lsp.buf.hover()<CR>", { desc = " Hover" })
-map("n", "<leader>cp", "<CMD>Lspsaga peek_definition<CR>", { desc = " Peek" })
-map("n", "<leader>cq", "<CMD>lua vim.diagnostic.setloclist()<CR>", { desc = " Quickfix" })
-map("n", "<leader>cr", "<CMD>lua vim.lsp.buf.rename()<CR>", { desc = " Rename" })
-map("n", "<leader>cs", "<CMD>Telescope lsp_document_symbols<CR>", { desc = " Document Symbols" })
-map("n", "<leader>cS", "<CMD>Telescope lsp_dynamic_workspace_symbols<CR>", { desc = " Workspace Symbols" })
+map("n", "<leader>la", "<CMD>lua vim.lsp.buf.code_action()<CR>", { desc = " Code Action" })
+map("n", "<leader>lD", "<CMD>Telescope diagnostics<CR>", { desc = " Diagnostics" })
+map("n", "<leader>ld", "<CMD>Telescope lsp_type_definitions<CR>", { desc = " Type Definitions" })
+map("n", "<leader>lf", "<CMD>lua vim.lsp.buf.formatting()<CR>", { desc = " Format" })
+map("n", "<leader>lh", "<CMD>lua vim.lsp.buf.signature_help()<CR>", { desc = "ﰠ Signature Help" })
+map("n", "<leader>lK", "<CMD>lua vim.lsp.buf.hover()<CR>", { desc = " Hover" })
+map("n", "<leader>lp", "<CMD>Lspsaga peek_definition<CR>", { desc = " Peek" })
+map("n", "<leader>lq", "<CMD>lua vim.diagnostic.setloclist()<CR>", { desc = " Quickfix" })
+map("n", "<leader>lr", "<CMD>lua vim.lsp.buf.rename()<CR>", { desc = " Rename" })
+map("n", "<leader>ls", "<CMD>Telescope lsp_document_symbols<CR>", { desc = " Document Symbols" })
+map("n", "<leader>lS", "<CMD>Telescope lsp_dynamic_workspace_symbols<CR>", { desc = " Workspace Symbols" })
 -- map("n", "<leader>   w = { function() require("telescope.builtin").lsp_workspace_symbols() end, "Workspace symbols" },
 
 -- Yanky
