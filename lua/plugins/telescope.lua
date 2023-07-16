@@ -30,7 +30,11 @@ return {
         ":Telescope file_browser<CR>",
         desc = " Explorer (root dir)",
       },
-
+      {
+        "<leader>fE",
+        ":Telescope file_browser hidden=true<CR>",
+        desc = " Explorer (hidden)",
+      },
       {
         "<leader>ff",
         function()
@@ -41,7 +45,7 @@ return {
       {
         "<leader>fF",
         function()
-          require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
+          require("telescope.builtin").find_files({ cwd = ".", hidden = true, no_ignore = true })
         end,
         desc = " Find all files",
       },
