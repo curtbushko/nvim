@@ -26,20 +26,13 @@ return {
     -- :ObsidianFollowLink to follow a note reference under the cursor.
     --
     keys = {
-      { "<leader>ob", "<CMD>ObsidianBacklinks<CR>", desc = " Backlinks" },
-      { "<leader>od", "<CMD>ObsidianToday<CR>", desc = " New Daily Note" },
-      {
-        "<leader>Sr",
-        function()
-          require("persistence").load()
-        end,
-        desc = "Restore Session",
-      },
-      { "<leader>of", "gf", desc = " Follow Link" },
-      { "<leader>ol", "<CMD>ObsidianLink<CR>", desc = " Link" },
-      { "<leader>om", "<CMD>ObsidianLinkNew<CR>", desc = " New Note from Link" },
-      { "<leader>on", "<CMD>ObsidianNew<CR>", desc = " New Note" },
-      { "<leader>oy", "<CMD>ObsidianYesterday<CR>", desc = " Yesterdays Daily Note" },
+      { "<leader>Ob", "<CMD>ObsidianBacklinks<CR>", desc = " Backlinks" },
+      { "<leader>Od", "<CMD>ObsidianToday<CR>", desc = " New Daily Note" },
+      { "<leader>Of", "gf", desc = " Follow Link" },
+      { "<leader>Ol", "<CMD>ObsidianLink<CR>", desc = " Link" },
+      { "<leader>Om", "<CMD>ObsidianLinkNew<CR>", desc = " New Note from Link" },
+      { "<leader>On", "<CMD>ObsidianNew<CR>", desc = " New Note" },
+      { "<leader>Oy", "<CMD>ObsidianYesterday<CR>", desc = " Yesterdays Daily Note" },
     },
   },
 }

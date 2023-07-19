@@ -80,14 +80,14 @@ return {
         function()
           require("telescope.builtin").oldfiles()
         end,
-        desc = " Recent",
+        desc = " Recent",
       },
       {
         "<leader>fg",
         function()
           require("telescope.builtin").live_grep()
         end,
-        desc = " Grep",
+        desc = "󱎸 Grep",
       },
       {
         "<leader>fs",
@@ -110,13 +110,13 @@ return {
             end,
           })
         end,
-        desc = " Grep all files (hidden)",
+        desc = "󱎸  Grep all files (hidden)",
       },
       -- git keymaps
       {
         "<leader>Gc",
         ":Telescope git_commits<CR>",
-        desc = "ﰖ Commits",
+        desc = " Commits",
       },
       {
         "<leader>Gb",
@@ -126,7 +126,7 @@ return {
       {
         "<leader>Gs",
         ":Telescope git_status<CR>",
-        desc = "ﮮ Status",
+        desc = "󱖫 Status",
       },
     },
     -- change some options
