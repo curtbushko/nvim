@@ -145,10 +145,10 @@ return {
               return require("telescope.actions").cycle_history_prev(...)
             end,
             ["<C-j>"] = function(...)
-              return require("telescope.actions").move_selection_next(...)
+              return require("telescope.actions").preview_scrolling_down(...)
             end,
             ["<C-k>"] = function(...)
-              return require("telescope.actions").move_selection_previous(...)
+              return require("telescope.actions").preview_scrolling_up(...)
             end,
           },
           n = {
