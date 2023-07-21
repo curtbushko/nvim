@@ -16,14 +16,14 @@ return {
         function()
           require("telescope.builtin").buffers()
         end,
-        desc = "﬘ Find buffers",
+        desc = " Find buffers",
       },
       {
         "<leader>fc",
         function()
           require("telescope.builtin").grep_string()
         end,
-        desc = " Find text under cursor",
+        desc = "󰯉 Find text under cursor",
       },
       {
         "<leader>fe",
@@ -54,14 +54,14 @@ return {
         function()
           require("telescope.builtin").help_tags()
         end,
-        desc = "ﬤ Help",
+        desc = "󰘥 Help",
       },
       {
         "<leader>fk",
         function()
           require("telescope.builtin").keymaps()
         end,
-        desc = "  Keymaps",
+        desc = " Keymaps",
       },
       {
         "<leader>fm",
@@ -186,6 +186,7 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
       config = function()
+        require("telescope").load_extension("cheat")
         require("telescope").load_extension("fzf")
         require("telescope").load_extension("yank_history")
         require("telescope").load_extension("todo-comments")
