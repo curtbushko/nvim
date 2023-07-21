@@ -150,6 +150,12 @@ return {
             ["<C-k>"] = function(...)
               return require("telescope.actions").preview_scrolling_up(...)
             end,
+            ["<C-h>"] = function(...)
+              return require("telescope.actions").preview_scrolling_left(...)
+            end,
+            ["<C-l>"] = function(...)
+              return require("telescope.actions").preview_scrolling_right(...)
+            end,
           },
           n = {
             ["q"] = function(...)
@@ -160,6 +166,12 @@ return {
             end,
             ["<C-k>"] = function(...)
               return require("telescope.actions").preview_scrolling_up(...)
+            end,
+            ["<C-h>"] = function(...)
+              return require("telescope.actions").preview_scrolling_left(...)
+            end,
+            ["<C-l>"] = function(...)
+              return require("telescope.actions").preview_scrolling_right(...)
             end,
           },
         },
