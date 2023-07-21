@@ -155,6 +155,12 @@ return {
             ["q"] = function(...)
               return require("telescope.actions").close(...)
             end,
+            ["<C-j>"] = function(...)
+              return require("telescope.actions").preview_scrolling_down(...)
+            end,
+            ["<C-k>"] = function(...)
+              return require("telescope.actions").preview_scrolling_up(...)
+            end,
           },
         },
       },
