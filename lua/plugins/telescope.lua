@@ -186,7 +186,6 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
       config = function()
-        require("telescope").load_extension("cheat")
         require("telescope").load_extension("fzf")
         require("telescope").load_extension("yank_history")
         require("telescope").load_extension("todo-comments")
