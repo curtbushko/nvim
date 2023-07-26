@@ -16,5 +16,9 @@ return {
         virtual_text = false,
       },
     },
+    keys = {
+      { "<leader>cl", false },
+      { "<leader>cr", false },
+    },
   },
 }
