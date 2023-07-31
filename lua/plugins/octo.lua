@@ -92,10 +92,10 @@ return {
           -- react_confused = { lhs = "<leader>oRc", desc = "add/remove 😕 reaction" },
         },
         submit_win = {
-          -- approve_review = { lhs = "<C-a>", desc = "approve review" },
-          -- comment_review = { lhs = "<C-m>", desc = "comment review" },
-          -- request_changes = { lhs = "<C-r>", desc = "request changes review" },
-          -- close_review_tab = { lhs = "<C-c>", desc = "close review tab" },
+          approve_review = { lhs = "<C-a>", desc = "approve review" },
+          comment_review = { lhs = "<C-m>", desc = "comment review" },
+          request_changes = { lhs = "<C-r>", desc = "request changes review" },
+          close_review_tab = { lhs = "<C-c>", desc = "close review tab" },
         },
         review_diff = {
           -- add_review_comment = { lhs = "<leader>ca", desc = "add a new review comment" },
@@ -146,7 +146,7 @@ return {
     { "<leader>ord", "<CMD>Octo review discard<CR>", desc = " Discard" },
     { "<leader>ors", "<CMD>Octo review start<CR>", desc = " Start" },
     { "<leader>orr", "<CMD>Octo review resume<CR>", desc = "󰜉 Resume" },
-    { "<leader>orp", "<CMD>Octo review submit<CR>", desc = " Push/Submit review" },
+    { "<leader>orS", "<CMD>Octo review submit<CR>", desc = " Submit review" },
     -- Reaction
     { "<leader>oRc", "<CMD>Octo reaction confused<CR>", desc = "󱃟 Confused" },
     { "<leader>oRd", "<CMD>Octo reaction thumbs_down<CR>", desc = " Thumbs down" },
