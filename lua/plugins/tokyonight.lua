@@ -10,6 +10,8 @@ return {
         c.green2 = "#019ef3"
         c.teal = "#65bcff"
         c.blue2 = "#7aa2f7"
+        c.git.add = "#7ea454"
+        c.gitSigns.add = "#7ea454"
       end,
       on_highlights = function(hl, c)
         -- make the current line cursor orange
