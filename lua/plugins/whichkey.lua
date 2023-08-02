@@ -33,7 +33,6 @@ return {
         ["<leader>Gd"] = { name = " DiffView" },
         ["<leader>Gh"] = { name = " Hunks" },
         ["<leader>l"] = { name = " LSP" },
-        ["<leader>m"] = { name = " Marks" },
         -- Octo
         ["<leader>o"] = { name = " Octo" },
         ["<leader>oc"] = { name = " Comments" },
