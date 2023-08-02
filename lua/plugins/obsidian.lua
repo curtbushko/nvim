@@ -7,11 +7,17 @@ return {
         id = {},
         daily_notes = {
           folder = "daily",
+          date_format = "%Y%m%d",
         },
         disable_frontmatter = true,
         note_id_func = function()
           return tostring(os.date("%Y%m%d-%H%M"))
         end,
+        templates = {
+          subdir = "templates",
+          date_format = "%Y%m%d-%a",
+          time_format = "%H:%M",
+        },
       })
     end,
     -- :ObsidianBacklinks for getting a location list of references to the current buffer.
