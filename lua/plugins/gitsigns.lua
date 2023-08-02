@@ -1,4 +1,3 @@
--- TODO: Add nerdfonts to keymaps
 return {
   "lewis6991/gitsigns.nvim",
 
