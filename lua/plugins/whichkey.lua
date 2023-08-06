@@ -3,7 +3,12 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {
-      plugins = { spelling = true },
+      plugins = {
+        spelling = true,
+        presets = {
+          operators = true,
+        },
+      },
       icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
         separator = "   ", -- symbol used between a key and it's label
@@ -42,10 +47,12 @@ return {
         ["<leader>oR"] = { name = " Reaction" },
         ["<leader>O"] = { name = " Obsidian" },
         ["<leader>s"] = { name = " Search" },
-        ["<leader>S"] = { name = " Sessions" },
         ["<leader>t"] = { name = " Trouble" },
         ["<leader>u"] = { name = "󰍹 Ui" },
         ["<leader>un"] = { name = "󰀨 Noice" },
+        ["<leader>uS"] = { name = " Sessions" },
+        ["<leader>S"] = { name = "󰅪 Surround" },
+        ["<leader>Sw"] = { name = " Word" },
       })
     end,
   },
