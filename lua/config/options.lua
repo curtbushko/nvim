@@ -2,7 +2,7 @@ local opt = vim.opt
 
 opt.autowrite = true -- Enable auto write
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
-opt.colorcolumn = "120"
+--opt.colorcolumn = "120" -- Turning this line off because it doesn't look nice with transparent background
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 3 -- Hide * markup for bold and italic
 opt.copyindent = true
