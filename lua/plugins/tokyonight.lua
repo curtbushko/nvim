@@ -2,6 +2,7 @@ return {
   {
     "folke/tokyonight.nvim",
     lazy = true,
+    transparent = true,
     opts = {
       style = "night",
       on_colors = function(c)
