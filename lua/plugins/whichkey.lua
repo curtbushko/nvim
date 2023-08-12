@@ -23,6 +23,8 @@ return {
         ["<leader>b"] = { name = " Buffers" },
         -- Code menus
         ["<leader>d"] = { name = " Debug" },
+        ["<leader>c"] = { name = "󱙺 Code" },
+
         ["<leader>f"] = { name = " Find" },
         -- Golang menus
         ["<leader>g"] = { name = "󰟓 Golang" },
