@@ -23,6 +23,7 @@ return {
         ["<leader>b"] = { name = " Buffers" },
         -- Code menus
         ["<leader>d"] = { name = " Debug" },
+        ["<leader>D"] = { name = " Devdocs" },
         ["<leader>c"] = { name = "󱙺 Code" },
 
         ["<leader>f"] = { name = " Find" },
