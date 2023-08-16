@@ -6,6 +6,7 @@ return {
     opts = {
       style = "night",
       on_colors = function(c)
+        c.fg = "#dfe9ff"
         c.yellow = "#FFEC6E"
         c.green1 = "#00b0fc"
         c.green2 = "#019ef3"
