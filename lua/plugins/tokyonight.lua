@@ -21,6 +21,11 @@ return {
 
         -- borderless telescope
         local prompt = "#2d3149"
+
+        hl.FloatBorder = {
+          bg = c.bg_dark,
+          fg = c.green1,
+        }
         hl.TelescopeNormal = {
           bg = c.bg_dark,
           fg = c.fg_dark,
@@ -31,6 +36,7 @@ return {
         }
         hl.TelescopePromptNormal = {
           bg = prompt,
+          fg = c.green1,
         }
         hl.TelescopePromptBorder = {
           bg = prompt,
