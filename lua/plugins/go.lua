@@ -7,7 +7,20 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     config = function()
-      require("go").setup()
+      local consul_build_tags = function()
+        local vim = vim
+        local fn = vim.fn
+        local cwd = fn.getcwd()
+        if string.find(cwd, "enterprise") then
+          return "consulent"
+        end
+        return ""
+      end
+
+      require("go").setup({
+        lsp_cfg = true,
+        build_tags = consul_build_tags(),
+      })
     end,
     event = { "CmdlineEnter" },
     ft = { "go", "gomod" },
