@@ -66,7 +66,6 @@ return {
         "proto",
         "query",
         "regex",
-        "rust",
         "terraform",
         "vim",
         "yaml",
