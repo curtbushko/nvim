@@ -25,22 +25,11 @@ return {
         ["<leader>d"] = { name = " Debug" },
         ["<leader>D"] = { name = " Devdocs" },
         ["<leader>c"] = { name = "󱙺 Code" },
-
         ["<leader>f"] = { name = " Find" },
-        -- Golang menus
-        ["<leader>g"] = { name = "󰟓 Golang" },
-        ["<leader>gB"] = { name = " Build & 󰤑 Test" },
-        ["<leader>gc"] = { name = " Coverage" },
-        ["<leader>gd"] = { name = " Debug" },
-        ["<leader>gF"] = { name = "  Format" },
-        ["<leader>gl"] = { name = "󰃣 Lint" },
-        ["<leader>gs"] = { name = "󰟌 Source Analysis" },
-        ["<leader>gT"] = { name = " Tags" },
         -- Git menus
-        ["<leader>G"] = { name = " Git" },
-        ["<leader>Gd"] = { name = " DiffView" },
-        ["<leader>Gh"] = { name = " Hunks" },
-        ["<leader>l"] = { name = " LSP" },
+        ["<leader>g"] = { name = " Git" },
+        ["<leader>gd"] = { name = " DiffView" },
+        ["<leader>gh"] = { name = " Hunks" },
         -- Octo
         ["<leader>o"] = { name = " Octo" },
         ["<leader>oc"] = { name = " Comments" },

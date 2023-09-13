@@ -38,7 +38,7 @@ return {
       {
         "<leader>ff",
         function()
-          require("telescope.builtin").find_files({ cwd = "." })
+          require("telescope.builtin").find_files({ cwd = ".", hidden = false })
         end,
         desc = " Find files",
       },
@@ -114,17 +114,17 @@ return {
       },
       -- git keymaps
       {
-        "<leader>Gc",
+        "<leader>gc",
         ":Telescope git_commits<CR>",
         desc = " Commits",
       },
       {
-        "<leader>Gb",
+        "<leader>gb",
         ":Telescope git_branches<CR>",
         desc = " Branches",
       },
       {
-        "<leader>Gs",
+        "<leader>gs",
         ":Telescope git_status<CR>",
         desc = "󱖫 Status",
       },
