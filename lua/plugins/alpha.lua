@@ -25,7 +25,7 @@ return {
     dashboard.section.buttons.val = {
       dashboard.button("SPC f f", " " .. " Find file", ":Telescope find_files <CR>"),
       dashboard.button("SPC f r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
-      dashboard.button("SPC f g", " " .. " Grep", ":Telescope live_grep <CR>"),
+      dashboard.button("SPC f g", "󱎸  " .. " Grep", ":Telescope live_grep <CR>"),
       dashboard.button("SPC f m", " " .. " Marks", ":Telescope marks <CR>"),
       dashboard.button("SPC f n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
       dashboard.button("SPC S l", " " .. " Last Session", [[:lua require("persistence").load() <cr>]]),

@@ -1,0 +1,409 @@
+{
+    "var [zig snippet]": {
+        "prefix": "var",
+        "body": [
+            "var ${1:name}: ${2:type} = $0;"
+        ],
+        "description": "var decl"
+    },
+    "const [zig snippet]": {
+        "prefix": "const",
+        "body": [
+            "const ${1:name}: ${2:type} = $0;"
+        ],
+        "description": "const decl"
+    },
+    "arr_init [zig snippet]": {
+        "prefix": "arr_init",
+        "body": [
+            "[_:${1:sentinel}]${1:type}{$0};"
+        ],
+        "description": "array/sentinel init"
+    },
+    "list [zig snippet]": {
+        "prefix": "list",
+        "body": [
+            ".{$0};"
+        ],
+        "description": "anonymous list"
+    },
+    "fn [zig snippet]": {
+        "prefix": "fn",
+        "body": [
+            "fn ${1:name}(${2:arguments}) {",
+            "    $0",
+            "}"
+        ],
+        "description": "fn decl"
+    },
+    "generic_fn [zig snippet]": {
+        "prefix": "fn_gen",
+        "body": [
+            "fn ${1:name}(comptime T: type, $2) type {",
+            "    $0",
+            "}"
+        ],
+        "description": "generic fn decl"
+    },
+    "pub_fn [zig snippet]": {
+        "prefix": "pub_fn",
+        "body": [
+            "pub fn ${1:name}(${2:arguments}) {",
+            "    $0",
+            "}"
+        ],
+        "description": "pub fn decl"
+    },
+    "extern_fn [zig snippet]": {
+        "prefix": "ext",
+        "body": [
+            "extern \"${1:sourceName}\" stdcallcc fn ${2:name}() $0;"
+        ],
+        "description": "extern fn"
+    },
+    "exp_fn [zig snippet]": {
+        "prefix": "fn_exp",
+        "body": [
+            "export fn ${1:name}($0) {",
+            "    $TM_SELECTED_TEXT",
+            "}"
+        ],
+        "description": "export fn"
+    },
+    "inl_fn [zig snippet]": {
+        "prefix": "inl_fn",
+        "body": [
+            "inline fn ${1:name}($0) {",
+            "    $TM_SELECTED_TEXT",
+            "}"
+        ],
+        "description": "inline fn"
+    },
+    "nakedcc_fn [zig snippet]": {
+        "prefix": "naked_fn",
+        "body": [
+            "nakedcc fn _${1:name}($0) {",
+            "    $TM_SELECTED_TEXT",
+            "}"
+        ],
+        "description": "nakedcc fn"
+    },
+    "block [zig snippet]": {
+        "prefix": "block",
+        "body": [
+            "${1:label}: {",
+            "    $TM_SELECTED_TEXT$0",
+            "    break :${1:label} return_value",
+            "};"
+        ],
+        "description": "block expr"
+    },
+    "struct_val [zig snippet]": {
+        "prefix": "stru_val",
+        "body": [
+            "struct {",
+            "    $TM_SELECTED_TEXT$0",
+            "};"
+        ],
+        "description": "struct val"
+    },
+    "struct_decl [zig snippet]": {
+        "prefix": "stru_decl",
+        "body": [
+            "const ${1:StructName} = struct {",
+            "    $TM_SELECTED_TEXT$0",
+            "};"
+        ],
+        "description": "struct decl"
+    },
+    "enum [zig snippet]": {
+        "prefix": "enum",
+        "body": [
+            "const ${1:EnumName} = enum(${2:type}) {",
+            "    $TM_SELECTED_TEXT$0",
+            "};"
+        ],
+        "description": "enum decl"
+    },
+    "union [zig snippet]": {
+        "prefix": "union",
+        "body": [
+            "const ${1:UnionName} = union(${2:enum}) {",
+            "    $TM_SELECTED_TEXT$0",
+            "};"
+        ],
+        "description": "tagged union decl"
+    },
+    "for_val [zig snippet]": {
+        "prefix": "for_v",
+        "body": [
+            "for ($0) |${1:v}| {",
+            "    $TM_SELECTED_TEXT",
+            "}"
+        ],
+        "description": "for value loop"
+    },
+    "for_val_index [zig snippet]": {
+        "prefix": "for_v_i",
+        "body": [
+            "for ($0) |${1:v},${2:i}| {",
+            "    $TM_SELECTED_TEXT",
+            "}"
+        ],
+        "description": "for value,index loop"
+    },
+    "for_inline [zig snippet]": {
+        "prefix": "inl_for",
+        "body": [
+            "inline for ($0) |${1:v}| {",
+            "    $TM_SELECTED_TEXT",
+            "}"
+        ],
+        "description": "inline for loop"
+    },
+    "for_label [zig snippet]": {
+        "prefix": "label_for",
+        "body": [
+            "${1:label}: for ($0) |_| {",
+            "    for (iter) |_| {",
+            "        $TM_SELECTED_TEXT",
+            "        break :${1:label};",
+            "    }",
+            "}"
+        ],
+        "description": "labeled for loop"
+    },
+    "for_else [zig snippet]": {
+        "prefix": "for_else",
+        "body": [
+            "for ($0) |${1:v}| {",
+            "    $TM_SELECTED_TEXT",
+            "    break true;",
+            "} else false;"
+        ],
+        "description": "for else loop expr"
+    },
+    "while [zig snippet]": {
+        "prefix": "while",
+        "body": [
+            "while ($0) : () {",
+            "    $TM_SELECTED_TEXT",
+            "}"
+        ],
+        "description": "while loop"
+    },
+    "while_else [zig snippet]": {
+        "prefix": "while_else",
+        "body": [
+            "while ($0) : () {",
+            "    $TM_SELECTED_TEXT",
+            "    break true;",
+            "} else false;"
+        ],
+        "description": "while else loop expression"
+    },
+    "while_op [zig snippet]t": {
+        "prefix": "while?",
+        "body": [
+            "while ($0) |${1:v}| {",
+            "    $TM_SELECTED_TEXT",
+            "} else |err| {",
+            "    ",
+            "}"
+        ],
+        "description": "while optional loop"
+    },
+    "while_label [zig snippet]": {
+        "prefix": "label_while",
+        "body": [
+            "${1:label}: while ($0) : () {",
+            "    while () : () {",
+            "        break :${1:label};",
+            "    }",
+            "}"
+        ],
+        "description": "labeled while loop"
+    },
+    "while_inline [zig snippet]": {
+        "prefix": "inl_while",
+        "body": [
+            "inline while ($0) () {",
+            "    $1",
+            "}"
+        ],
+        "description": "inline while loop"
+    },
+    "if [zig snippet]": {
+        "prefix": "if",
+        "body": [
+            "if (${1:statement}) {",
+            "    $0",
+            "}"
+        ],
+        "description": "if expr"
+    },
+    "if_else [zig snippet]": {
+        "prefix": "if_else",
+        "body": [
+            "if (${1:statement}) {",
+            "    $0",
+            "} else {",
+            "    ",
+            "}"
+        ],
+        "description": "if else expr"
+    },
+    "if_opt [zig snippet]": {
+        "prefix": "if?",
+        "body": [
+            "if (${1:statement}) |v| {",
+            "    $0",
+            "}"
+        ],
+        "description": "if optional"
+    },
+    "if_else_opt [zig snippet]": {
+        "prefix": "if_else?",
+        "body": [
+            "if (${1:statement}) |v| {",
+            "    $0",
+            "} else |err| switch(err) {",
+            "     => ,",
+            "    else => ,",
+            "}"
+        ],
+        "description": "if else optional"
+    },
+    "switch [zig snippet]": {
+        "prefix": "switch",
+        "body": [
+            "switch (${1:statement}) {",
+            "     => ,",
+            "    else => ,",
+            "};"
+        ],
+        "description": "switch expr"
+    },
+    "test [zig snippet]": {
+        "prefix": "test",
+        "body": [
+            "test ${1:name} {",
+            "    $0",
+            "    assert(true)",
+            "}"
+        ],
+        "description": "test"
+    },
+    "orelse [zig snippet]": {
+        "prefix": "orelse",
+        "body": [
+            "orelse return $0"
+        ],
+        "description": "orelse expr"
+    },
+    "defer [zig snippet]": {
+        "prefix": "def",
+        "body": [
+            "defer {",
+            "    $0",
+            "}"
+        ],
+        "description": "defer block"
+    },
+    "errdefer [zig snippet]": {
+        "prefix": "errd",
+        "body": [
+            "errdefer {",
+            "    $0",
+            "}"
+        ],
+        "description": "errdefer block"
+    },
+    "error [zig snippet]": {
+        "prefix": "error",
+        "body": [
+            "error {",
+            "    $0",
+            "};"
+        ],
+        "description": "error decl"
+    },
+    "catch [zig snippet]": {
+        "prefix": "catch",
+        "body": [
+            "catch |$1| {",
+            "    $0",
+            "};"
+        ],
+        "description": "catch error block"
+    },
+    "comptime [zig snippet]": {
+        "prefix": "comp",
+        "body": [
+            "comptime {",
+            "    $0",
+            "}"
+        ],
+        "description": "comptime block"
+    },
+    "asm [zig snippet]": {
+        "prefix": "asm",
+        "body": [
+            "asm $1 (",
+            "    $0",
+            ");"
+        ],
+        "description": "asm block"
+    },
+    "suspend_block [zig snippet]": {
+        "prefix": "suspend",
+        "body": [
+            "suspend {",
+            "    $0",
+            "}"
+        ],
+        "description": "suspend block"
+    },
+    "import-std [zig snippet]": {
+        "prefix": [
+            "imps",
+            "impstd"
+        ],
+        "body": [
+            "const std = @import(\"std\");"
+        ],
+        "description": "import std"
+    },
+    "main_template [zig snippet]": {
+        "prefix": [
+            "main"
+        ],
+        "body": [
+            "const std = @import(\"std\");",
+            "",
+            "pub fn main() void {",
+            "    const stdout = std.io.getStdOut().writer();",
+            "    try stdout.print(\"Hello, {s}!\n\", .{\"world\"});$0",
+            "}"
+        ],
+        "description": "main/hello world"
+    },
+    "adt_template [zig snippet]": {
+        "prefix": "adt_template",
+        "body": [
+            "const std = @import(\"std\");\n",
+            "const ExprTag = enum {\n    Num,\n    Plus,\n};\n",
+            "const Expr = union(ExprTag) {\n    Num: i32,\n    Plus: struct{ e1: *const Expr, e2: *const Expr},\n};",
+            "fn eval(e: *const Expr) i32 {",
+            "    return switch (e.*) {",
+            "        .Num => |n| n,",
+            "        .Plus => |*plus_elem| eval(plus_elem.e1) + eval(plus_elem.e2),",
+            "        else => unreachable,\n    };\n}",
+            "pub fn main() void {",
+            "    const e = &Expr{ .Plus = .{ .e1 = &Expr{ .Num = 6}, .e2 = &Expr{ .Num = 5}}};",
+            "    std.debug.print(\"{}\\n\", .{e});$0",
+            "}"
+        ],
+        "description": "Algebraic Data Type"
+    }
+}
