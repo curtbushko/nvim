@@ -1,6 +1,6 @@
 return {
   {
-    "windwp/nvim-spectre",
+    "nvim-pack/nvim-spectre",
     -- stylua: ignore
     keys = {
       -- disable default LazyVim keymaps
