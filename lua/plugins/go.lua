@@ -20,7 +20,8 @@ return {
       require("go").setup({
         lsp_cfg = true,
         lsp_keymaps = false,
-        build_tags = consul_build_tags(),
+        -- build_tags = consul_build_tags(),
+        build_tags = "enterprise,consulent",
       })
     end,
     event = { "CmdlineEnter" },
