@@ -30,14 +30,8 @@ return {
         ["<leader>g"] = { name = " Git" },
         ["<leader>gd"] = { name = " DiffView" },
         ["<leader>gh"] = { name = " Hunks" },
-        -- Octo
-        ["<leader>o"] = { name = " Octo" },
-        ["<leader>oc"] = { name = " Comments" },
-        ["<leader>oi"] = { name = " Issues" },
-        ["<leader>op"] = { name = " PR" },
-        ["<leader>or"] = { name = " Review" },
-        ["<leader>oR"] = { name = " Reaction" },
         ["<leader>O"] = { name = " Obsidian" },
+
         ["<leader>s"] = { name = " Search" },
         ["<leader>t"] = { name = " Terminal" },
         ["<leader>T"] = { name = " Trouble" },

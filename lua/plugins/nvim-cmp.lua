@@ -9,6 +9,11 @@ return {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-emoji",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
+      "onsails/lspkind-nvim",
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
@@ -38,7 +43,9 @@ return {
         }),
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
         ["<Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
+          if require("copilot.suggestion").is_visible() then
+            require("copilot.suggestion").accept()
+          elseif cmp.visible() then
             cmp.select_next_item()
           elseif luasnip.expandable() then
             luasnip.expand()
