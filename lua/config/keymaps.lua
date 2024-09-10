@@ -17,8 +17,8 @@ map("c", "jj", "<ESC>", { remap = true, silent = true })
 --- Nice to haves
 map("n", "<TAB>", "<CMD>BufferLineCycleNext<cr>", { remap = true, desc = " Next Buffer" })
 map("n", "<S-TAB>", "<CMD>BufferLineCyclePrev<cr>", { remap = true, desc = " Previous Buffer" })
-map("n", "<leader>j", "<C-f>", { remap = true, silent = true, desc = " Screen down" })
-map("n", "<leader>k", "<C-b>", { remap = true, silent = true, desc = " Screen up" })
+map("n", "<leader>j", "<C-f>", { remap = true, silent = true, desc = "screen down" })
+map("n", "<leader>k", "<C-b>", { remap = true, silent = true, desc = "screen up" })
 map(
   "n",
   "<leader>/",
@@ -31,14 +31,6 @@ map(
   "<ESC><CMD>lua require('Comment.api').locked('toggle.linewise')(vim.fn.visualmode())<CR>",
   { remap = true, desc = " Comment" }
 )
-
--- lazygit
-map("n", "<leader>gl", function()
-  Util.float_term({ "lazygit" }, { cwd = Util.get_root() })
-end, { desc = "Lazygit (root dir)" })
-map("n", "<leader>gl", function()
-  Util.float_term({ "lazygit" })
-end, { desc = "Lazygit (cwd)" })
 
 -- LSP
 map("n", "gd", "<CMD>Telescope lsp_definitions<CR>")
