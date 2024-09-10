@@ -40,29 +40,21 @@ map("n", "gr", "<CMD>Telescope lsp_references<CR>")
 map("n", "gt", "<CMD>Telescope lsp_type_definitions<CR>")
 map("n", "gb", "<C-o>", { desc = "Go back" })
 
-map("n", "<leader>ca", "<CMD>lua vim.lsp.buf.code_action()<CR>", { desc = " Code Action" })
-map("n", "<leader>cd", "<CMD>Telescope lsp_definitions<CR>", { desc = "󰉺 Definitions" })
-map("n", "<leader>cD", "<CMD>Telescope diagnostics<CR>", { desc = " Diagnostics" })
-map("n", "<leader>ch", "<CMD>lua vim.lsp.buf.signature_help()<CR>", { desc = "ﰠ Signature Help" })
-map("n", "<leader>ci", "<CMD>Telescope lsp_implementations<CR>", { desc = " Implementations" })
-map("n", "<leader>cK", "<CMD>lua vim.lsp.buf.hover()<CR>", { desc = " Hover" })
-map("n", "<leader>cp", "<CMD>Lspsaga peek_definition<CR>", { desc = " Peek" })
-map("n", "<leader>cq", "<CMD>lua vim.diagnostic.setloclist()<CR>", { desc = "󰤇 Quickfix" })
-map("n", "<leader>cr", "<CMD>Telescope lsp_references<CR>", { desc = " References" })
-map("n", "<leader>cR", "<CMD>lua vim.lsp.buf.rename()<CR>", { desc = " Rename" })
-map("n", "<leader>cs", "<CMD>Telescope lsp_document_symbols<CR>", { desc = " Document Symbols" })
-map("n", "<leader>cS", "<CMD>Telescope lsp_dynamic_workspace_symbols<CR>", { desc = " Workspace Symbols" })
-map("n", "<leader>ct", "<CMD>Telescope lsp_type_definitions<CR>", { desc = " Type Definitions" })
+-- July 19, 2024 - removing as they might be duplicates of what LazyVim does
+--map("n", "<leader>ca", "<CMD>lua vim.lsp.buf.code_action()<CR>", { desc = " Code Action" })
+--map("n", "<leader>cd", "<CMD>Telescope lsp_definitions<CR>", { desc = "󰉺 Definitions" })
+--map("n", "<leader>cD", "<CMD>Telescope diagnostics<CR>", { desc = " Diagnostics" })
+--map("n", "<leader>ch", "<CMD>lua vim.lsp.buf.signature_help()<CR>", { desc = "ﰠ Signature Help" })
+--map("n", "<leader>ci", "<CMD>Telescope lsp_implementations<CR>", { desc = " Implementations" })
+--map("n", "<leader>cK", "<CMD>lua vim.lsp.buf.hover()<CR>", { desc = " Hover" })
+--map("n", "<leader>cp", "<CMD>Lspsaga peek_definition<CR>", { desc = " Peek" })
+--map("n", "<leader>cq", "<CMD>lua vim.diagnostic.setloclist()<CR>", { desc = "󰤇 Quickfix" })
+--map("n", "<leader>cr", "<CMD>Telescope lsp_references<CR>", { desc = " References" })
+--map("n", "<leader>cR", "<CMD>lua vim.lsp.buf.rename()<CR>", { desc = " Rename" })
+--map("n", "<leader>cs", "<CMD>Telescope lsp_document_symbols<CR>", { desc = " Document Symbols" })
+--map("n", "<leader>cS", "<CMD>Telescope lsp_dynamic_workspace_symbols<CR>", { desc = " Workspace Symbols" })
+--map("n", "<leader>ct", "<CMD>Telescope lsp_type_definitions<CR>", { desc = " Type Definitions" })
 -- map("n", "<leader>   w = { function() require("telescope.builtin").lsp_workspace_symbols() end, "Workspace symbols" },
-
--- Yanky
-map("n", "y", "<Plug>(YankyYank)", { remap = true, silent = true })
-map("n", "p", "<Plug>(YankyPutAfter)", { remap = true, silent = true })
-map("n", "P", "<Plug>(YankyPutBefore)", { remap = true, silent = true })
-map("n", "gp", "<Plug>(YankyGPutAfter)", { remap = true, silent = true })
-map("n", "gP", "<Plug>(YankyGPutBefore)", { remap = true, silent = true })
-map("n", "<c-n>", "<Plug>(YankyCycleForward)", { remap = true, silent = true })
-map("n", "<c-p>", "<Plug>(YankyCycleBackward)", { remap = true, silent = true })
 
 -- DAP mappings:
 map("n", "<F1>", ":lua require('dap').toggle_breakpoint()<CR>", { remap = true, silent = true })
@@ -76,25 +68,6 @@ map("n", "<F8>", ":GoDebug -R<CR>", { remap = true, silent = true }) -- restart
 map("n", "<leader>db", ":lua require('dap').toggle_breakpoint()<CR>", { remap = true, silent = true })
 
 map("n", "<leader>p", ":Telescope yank_history<CR>", { desc = "󰅌 Paste History" })
-
--- UI
-map("n", "<leader>uf", require("lazyvim.util.format").toggle, { desc = "Toggle format on Save" })
-map("n", "<leader>us", function()
-  Util.toggle("spell")
-end, { desc = "󰓆 Toggle Spelling" })
-map("n", "<leader>uw", function()
-  Util.toggle("wrap")
-end, { desc = " Toggle Word Wrap" })
-map("n", "<leader>uL", function()
-  Util.toggle("relativenumber", true)
-  Util.toggle("number")
-end, { desc = " Toggle Line Numbers" })
-map("n", "<leader>ud", Util.toggle.diagnostics, { desc = " Toggle Diagnostics" })
-local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
-map("n", "<leader>uc", function()
-  Util.toggle("conceallevel", false, { 0, conceallevel })
-end, { desc = "Toggle Conceal" })
-map("n", "<leader>ul", "<cmd>:Lazy<cr>", { desc = "鈴Lazy" })
 
 -- Stay in indent mode
 map("v", "<", "<gv", { remap = true, desc = "unindent line" })
